@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>bmo requests</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    %= javascript 'https://code.jquery.com/jquery-2.2.0.min.js'
+    %= stylesheet_file 'default.css'
+    %= javascript_file 'dashboard.js'
+</head>
+
+<body>
+    <div id="header">bmo requests</div>
+    <div id="login"><%= $login %></div>
+    <div id="loading">loading...</div>
+    <div id="flags"></div>
+</body>
+
+</html>

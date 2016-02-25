@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+    font-size: 10pt;
+    background: url(noise.png) #666;
+}
+
+#header {
+    color: #fff;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#login {
+    color: #ddd;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+#loading {
+    color: #ddd;
+    font-style: italic;
+}
+
+#grid {
+    width: 100%;
+    background: #fff;
+}
+
+#grid th, #grid td {
+    text-align: left;
+    padding: 5px;
+}
+
+#grid .header th, #grid .header td {
+    border-bottom: 1px solid #ddd;
+}
+
+#zarro {
+    font-style: italic;
+}
+
+.bug {
+    white-space: nowrap;
+}

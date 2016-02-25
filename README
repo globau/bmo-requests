@@ -1,0 +1,6 @@
+https://glob.uno/requests/
+
+log in with your bugzilla.mozilla.org username.
+
+you can optionally provide an api-key as the password to show confidential
+bugs.  leave the password field blank to only list public bugs.
