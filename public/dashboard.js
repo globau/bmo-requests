@@ -53,10 +53,18 @@ $(function() {
         {
             name: 'attachment',
             render: function(item) {
+                if (!item.attach_id) {
+                    return '-';
+                }
+                var url = 'https://bugzilla.mozilla.org/';
+                if (item.attach_is_patch) {
+                    url = url + 'page.cgi?id=splinter.html&bug=' + item.bug_id + '&attachment=' + item.attach_id;
+                } else {
+                    url = url + 'attachment.cgi?id=' + item.attach_id;
+                }
                 return item.attach_id
                     ? $('<a/>')
-                        .attr('href', 'https://bugzilla.mozilla.org/page.cgi?id=splinter.html' +
-                                    '&bug=' + item.bug_id + '&attachment=' + item.attach_id)
+                        .attr('href', url)
                         .attr('target', '_blank')
                         .text(item.attach_desc)
                     : '-';

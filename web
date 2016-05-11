@@ -71,7 +71,7 @@ sub _get {
             $url = Mojo::URL->new('https://bugzilla.mozilla.org/rest/bug/' . $bug->{id} . '/attachment');
             $url->query(
                 api_key => $api_key,
-                include_fields => 'description,flags,id',
+                include_fields => 'description,flags,id,is_patch',
             );
             $bug->{attachments} = $ua->get($url)->res->json('/bugs/' . $bug->{id});
         }
@@ -87,6 +87,7 @@ sub _get {
                         bug_desc => $bug->{summary},
                         attach_id => $attachment->{id},
                         attach_desc => $attachment->{description},
+                        attach_is_patch => $attachment->{is_patch},
                         flag_who => $flag->{setter},
                         flag_name => $flag->{name},
                         flag_when => str2time($flag->{creation_date}),
