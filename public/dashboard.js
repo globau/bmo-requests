@@ -121,7 +121,10 @@ $(function() {
                     )
                 );
             }
-        });
+        })
+            .always(function() {
+                $('#loading').hide();
+            });
     }
 
     update();
