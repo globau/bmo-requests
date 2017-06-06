@@ -39,6 +39,7 @@ get '/get' => \&_get;
 
 helper javascript_file => sub {
     my ($c, $file) = @_;
+    $file = 'static/' . $file;
     my $mtime = app->static->file($file)->mtime;
     return Mojo::ByteStream->new(
         '<script src="' . $file . '?' . $mtime . '"></script>'
@@ -47,6 +48,7 @@ helper javascript_file => sub {
 
 helper stylesheet_file => sub {
     my ($c, $file) = @_;
+    $file = 'static/' . $file;
     my $mtime = app->static->file($file)->mtime;
     return Mojo::ByteStream->new(
         '<link href="' . $file . '?' . $mtime . '" rel="stylesheet">'
