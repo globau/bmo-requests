@@ -1,16 +1,23 @@
 #!/usr/bin/env perl
-BEGIN { $ENV{MOJO_MODE} = 'production'; }
+use local::lib;
+
 use Mojolicious::Lite;
-app->secrets('!requests!');
 
 use Date::Parse qw( str2time );
+use FindBin qw( $RealBin );
 use Mojo::ByteStream;
 use Mojo::JSON qw( j );
 use Mojo::URL;
 use Mojo::UserAgent;
 use Try::Tiny;
 
-plugin 'basic_auth';
+plugin 'basic_auth';  # Mojolicious::Plugin::BasicAuth
+
+app->secrets('!requests!');
+$0 = 'requests.app';
+if (($ARGV[0] // '') eq 'daemon' && app->mode eq 'production') {
+    Mojo::File->new("$RealBin/requests.app.pid")->spurt("$$\n");
+}
 
 my ($login, $api_key);
 
