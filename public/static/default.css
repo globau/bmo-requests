@@ -8,6 +8,7 @@ body {
     color: #fff;
     margin-bottom: 5px;
     font-weight: bold;
+    display: inline-block;
 }
 
 #login {
@@ -20,6 +21,8 @@ body {
 #loading {
     color: #ddd;
     font-style: italic;
+    display: inline-block;
+    padding-left: 10px;
 }
 
 #grid {

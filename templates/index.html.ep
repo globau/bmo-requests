@@ -11,8 +11,8 @@
 
 <body>
     <div id="header">bmo requests</div>
-    <div id="login"><%= $login %></div>
     <div id="loading">loading...</div>
+    <div id="login"><%= $login %></div>
     <div id="flags"></div>
 </body>
 
