@@ -11,6 +11,7 @@
 
 <body>
     <div id="header">bmo requests</div>
+    <div id="refresh" style="display:none">&#x27f2;</div>
     <div id="loading">loading...</div>
     <div id="login"><%= $login %></div>
     <div id="flags"></div>

@@ -79,6 +79,7 @@ $(function() {
     ];
 
     function update() {
+        $('#refresh').hide();
         $('#loading').show();
         $.getJSON('get', function(data) {
             $('#loading').hide();
@@ -124,8 +125,13 @@ $(function() {
         })
             .always(function() {
                 $('#loading').hide();
+                $('#refresh').show();
             });
     }
+
+    $('#refresh').click(function() {
+        update();
+    });
 
     update();
     window.setInterval(update, 15 * 60 * 1000);

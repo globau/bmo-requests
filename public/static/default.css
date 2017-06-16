@@ -9,6 +9,7 @@ body {
     margin-bottom: 5px;
     font-weight: bold;
     display: inline-block;
+    font-size: 12pt;
 }
 
 #login {
@@ -16,6 +17,14 @@ body {
     position: absolute;
     top: 8px;
     right: 8px;
+}
+
+#refresh {
+    display: inline-block;
+    color: #ddd;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 12pt;
 }
 
 #loading {
